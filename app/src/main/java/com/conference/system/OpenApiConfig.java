@@ -12,8 +12,7 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI usersMicroserviceOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Your API Title")
-                                 .description("Your API Description")
-                                 .version("1.0"));
+                .info(new Info().title("Conference System")
+                                 .version("0.0.1-SNAPSHOT"));
     }
 }
