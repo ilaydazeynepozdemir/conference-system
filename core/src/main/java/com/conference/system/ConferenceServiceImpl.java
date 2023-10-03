@@ -1,15 +1,12 @@
 package com.conference.system;
 
-import com.conference.system.ConferenceService;
 import com.conference.system.model.Presentation;
 import com.conference.system.model.Track;
 import org.antlr.v4.runtime.misc.Pair;
-import org.hibernate.type.descriptor.DateTimeUtils;
 import org.springframework.stereotype.Service;
 
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +18,7 @@ public class ConferenceServiceImpl implements ConferenceService {
         int presentationCount = 0;
         int trackCount = 1;
         while (presentations.size() > presentationCount) {
-            Pair<Track,Integer> pairObj = createTrack(presentations, trackCount);
+            Pair<Track, Integer> pairObj = createTrack(presentations, trackCount);
             Track track = pairObj.a;
             result.add(track);
             presentationCount += pairObj.b;
