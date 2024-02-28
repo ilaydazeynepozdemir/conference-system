@@ -4,19 +4,17 @@ import com.conference.system.model.Presentation;
 import com.conference.system.model.PresentationRequest;
 import com.conference.system.model.PresentationResponse;
 import com.conference.system.model.Track;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.IntStream;
 
 @RestController
 public class ConferenceController {
@@ -27,8 +25,8 @@ public class ConferenceController {
         this.conferenceService = conferenceService;
     }
 
-    @PostMapping("test")
-    public Map<Character,Integer> test(@RequestParam String str){
+    @GetMapping("test/{str}")
+    public Map<Character,Integer> test(@PathParam("str") String str){
         Map<Character , Integer> result = new HashMap<>();
         for(int i = 0; i< str.length() ;++i){
             char chr = str.toLowerCase().charAt(i);
