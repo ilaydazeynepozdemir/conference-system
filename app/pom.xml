@@ -12,8 +12,6 @@
     <artifactId>app</artifactId>
 
 
-
-
     <dependencyManagement>
         <dependencies>
             <dependency>

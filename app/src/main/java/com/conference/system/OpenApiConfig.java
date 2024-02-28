@@ -13,6 +13,6 @@ public class OpenApiConfig {
     public OpenAPI usersMicroserviceOpenAPI() {
         return new OpenAPI()
                 .info(new Info().title("Conference System")
-                                 .version("0.0.1-SNAPSHOT"));
+                        .version("0.0.1-SNAPSHOT"));
     }
 }

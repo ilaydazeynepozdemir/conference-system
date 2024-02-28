@@ -27,7 +27,7 @@ public class DateTimeUtil {
     }
 
     public static String getTime(Date date) {
-        LocalTime localTime = LocalTime.of(date.getHours(),date.getMinutes());
+        LocalTime localTime = LocalTime.of(date.getHours(), date.getMinutes());
         return localTime.format(getInstance());
     }
 
@@ -38,7 +38,7 @@ public class DateTimeUtil {
         return calendar.getTime();
     }
 
-    public static Date getDate(String dateStr){
+    public static Date getDate(String dateStr) {
         TemporalAccessor temporalAccessor = getInstance().parse(dateStr);
         return new Date();
     }
