@@ -1,0 +1,6 @@
+FROM --platform=linux/x86_64 eclipse-temurin:17-jre-alpine
+MAINTAINER com.conference.system
+COPY /app/target/app-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=containers.instana.io/instana/release/aws/fargate/jvm /instana /instana
+ENV JAVA_TOOL_OPTIONS="-javaagent:/instana/instana-fargate-collector.jar"
+ENTRYPOINT ["java","-jar","/app.jar"]
